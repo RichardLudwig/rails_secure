@@ -1,21 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @article.content %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @article.user.username %>
-</p>
+<div class="blog-article">
+  <h2 class="blog-article-title"><%= @article.title %> </h2>
+  <p class="blog-article-meta text-center"><%= @article.created_at.strftime("%b. %d %Y") %>
+  <br>
+  <p><%= @article.content %> </p>
+</div>
 
 <% if current_user && current_user.admin? %> 
-  <%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Edit', edit_article_path(@article) %> 
 <% end %> 
-<%= link_to 'Back', articles_path %>

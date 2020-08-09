@@ -31,6 +31,7 @@ gem 'devise-i18n'
 gem 'devise-bootstrap-views'
 
 gem 'devise'
+gem 'faker', '2.1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

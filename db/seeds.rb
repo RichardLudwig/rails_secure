@@ -1,3 +1,5 @@
+require 'faker'
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -7,3 +9,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(email: 'demo@railssecure.com', password: 'demo123', admin: true)
+
+(1..10).each do |id|
+  Article.create!(
+    id: id,
+    title: Faker::Lorem.sentence,
+    content: Faker::Lorem.paragraph(sentence_count:4, supplemental: true)
+  )
+end
