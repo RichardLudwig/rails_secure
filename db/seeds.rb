@@ -8,8 +8,6 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(email: 'demo@securerailstheme.com', password: 'demo123', admin: true)
-
 (1..10).each do |id|
   Article.create!(
     id: id,
