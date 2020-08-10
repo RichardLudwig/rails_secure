@@ -13,9 +13,9 @@
       <tbody>
         <% @messages.each do |message| %>
           <tr scope="row">
-            <td><%= message.name %></td>
-            <td><%= message.email %></td>
-            <td><%= message.message.truncate(30) %></td>
+            <td><%= sanitize message.name %></td>
+            <td><%= sanitize message.email %></td>
+            <td><%= sanitize message.message.truncate(30) %></td>
             <td><%= link_to 'Show', message, class: 'btn btn-warning' %>
               <br>
               <br>
