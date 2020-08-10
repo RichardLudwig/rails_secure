@@ -27,10 +27,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Devise-i18n
-gem 'devise-i18n'
-gem 'devise-bootstrap-views'
+gem 'devise-i18n', '~> 1.9', '>= 1.9.1'
+gem 'devise-bootstrap-views', '~> 1.1'
 
-gem 'devise'
+gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'faker', '2.1.2'
 gem 'pg', '1.1.4'
 gem 'devise-pwned_password', '~> 0.1.8'
