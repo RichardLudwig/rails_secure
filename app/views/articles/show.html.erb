@@ -2,6 +2,7 @@
   <h2 class="blog-article-title"><%= @article.title %> </h2>
   <p class="blog-article-meta text-center"><%= @article.created_at.strftime("%b. %d %Y") %>
   <br>
+  <img src="<%= @article.image %>" alt="<%= @article.title %>">
   <p><%= @article.content %> </p>
 </div>
 
