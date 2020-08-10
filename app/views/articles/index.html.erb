@@ -15,10 +15,10 @@
           <% if current_user %>
             <div class="row">
               <div class="col text-center">
-                <button type="button" name="button" class="btn btn-md btn-warning" style="border: none; border-radius: 0;">
+                <button type="button" name="button" class="btn btn-md btn-warning btn-block" style="border: none; border-radius: 0;">
                   <%= link_to 'Edit', edit_article_path(article), style: 'color: white;' %>
                 </button>
-                <button type="button" name="button" class="btn btn-md btn-danger" style="border: none; border-radius: 0;">
+                <button type="button" name="button" class="btn btn-md btn-danger btn-block" style="border: none; border-radius: 0;">
                   <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, style: 'color: white;' %>
                 </button>
               </div>

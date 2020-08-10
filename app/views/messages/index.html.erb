@@ -1,0 +1,26 @@
+<h1>Messages</h1>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Message</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @messages.each do |message| %>
+          <tr scope="row">
+            <td><%= message.name %></td>
+            <td><%= message.email %></td>
+            <td><%= message.message.truncate(30) %></td>
+            <td><%= link_to 'Show', message, class: 'btn btn-warning' %>
+              <br>
+              <br>
+            <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>

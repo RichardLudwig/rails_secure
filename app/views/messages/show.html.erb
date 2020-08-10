@@ -1,0 +1,35 @@
+<!-- Disables text so phishping/speaphisphing links don't work unless admin copies and pastes into browser. -->
+<script>
+  $(function(){
+    $('.disabled-text').on('click',function(event){
+        event.preventDefault();
+    }).removeClass('disabled');
+  });
+</script>
+<form action="">
+
+<h1>Message <%= @message.id %></h1>
+<div class="disabled-text">
+  <div>
+    <strong>Name:</strong>
+    <%= @message.name %>
+  </div>
+  
+  <div>
+    <strong>Email:</strong>
+    <%= @message.email %>
+  </div>
+  
+  <div>
+    <strong>Subject:</strong>
+    <%= @message.subject %>
+  </div>
+  
+  <div class="disabled">
+    <strong>Message:</strong>
+    <%= @message.message %>
+  </div>
+</div>
+
+</form>
+<%= link_to 'Back', messages_path, class: 'btn btn-success btn-block' %>
