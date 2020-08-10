@@ -89,6 +89,9 @@ GEM
     devise-bootstrap-views (1.1.0)
     devise-i18n (1.9.1)
       devise (>= 4.7.1)
+    devise-pwned_password (0.1.8)
+      devise (~> 4)
+      pwned (~> 2.0.0)
     erubi (1.9.0)
     faker (2.1.2)
       i18n (>= 0.8)
@@ -170,6 +173,7 @@ GEM
       nio4r (~> 2.0)
     puma (4.3.5-java)
       nio4r (~> 2.0)
+    pwned (2.0.2)
     rack (2.2.3)
     rack-proxy (0.6.5)
       rack
@@ -293,6 +297,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views
   devise-i18n
+  devise-pwned_password (~> 0.1.8)
   faker (= 2.1.2)
   guard (= 2.16.2)
   guard-minitest (= 2.4.6)

@@ -180,6 +180,11 @@ Devise.setup do |config|
   # Range for password length.
   config.password_length = 12..128
 
+  # Minimum number of times a pwned password must exist in the data set in order
+  # to be reject.
+  config.min_password_matches = 1
+  config.pwned_password_check_on_sign_in = false
+
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
