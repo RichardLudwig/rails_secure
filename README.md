@@ -1,24 +1,9 @@
-# README
+This website is a demo for my secure rails theme. I created this theme to provide new web developers with a secure Ruby on Rails theme they can build on for their own projects.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fork the GitHub repo to get started.
 
-Things you may want to cover:
+If you have any recommendations for future features, contact me at https://richardludwig.com
 
-* Ruby version
+I recommend learning the basics of HTML, CSS, JavaScript, Rails, and PostgreSQL before using this theme. 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Documentation is coming soon!
