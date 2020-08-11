@@ -7,3 +7,9 @@ a, a:hover, a:focus, a:active {
   text-decoration: none;
   color: inherit;
 }
+
+// "fixes" hyperlink appearance if user not logged in
+.ext-link {
+  text-decoration: underline;
+  color: rgb(6,69,173);
+}
