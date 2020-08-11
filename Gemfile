@@ -32,6 +32,7 @@ gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'faker', '2.1.2'
 gem 'pg', '1.1.4'
 gem 'devise-pwned_password', '~> 0.1.8'
+gem 'friendly_id', '~> 5.2.4' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -5,7 +5,9 @@ class Article < ApplicationRecord
 
   validates_uniqueness_of :search, presence: true, :case_sensitive => false
 
-  def to_param
-    "#{id} #{title}".parameterize
-  end  
+  # def to_param
+  #   "#{id} #{title}".parameterize
+  # end  
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 end

@@ -13,6 +13,6 @@ require 'faker'
     id: id,
     title: Faker::Lorem.sentence,
     image: Faker::LoremPixel.image,
-    content: Faker::Lorem.paragraph(sentence_count:4, supplemental: true)
+    content: Faker::Lorem.paragraph(sentence_count:50, supplemental: true)
   )
 end
