@@ -1,3 +1,5 @@
+require 'faker'
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -6,16 +8,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Article.create( 
-  title: 'Hello World', 
-  image: 'http://lorempixel.com/400/200/sports',
-  content: 'Dolore corrupti earum doloribus nisi sed velit temporibus occaecati. Magni eius libero et sint officia quia nihil. Consequatur quia optio molestiae earum a. Facere laudantium optio ea rerum suscipit vero enim. Non non et quis ut id.
+(1..20).each do |i|
+  Message.create!(
+    id: i,
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    message: Faker::Lorem.paragraphs(number: 2)
+  )
+end
 
-  Quasi et inventore doloribus repudiandae ea a adipisci aut. Porro et voluptatem dolorum similique. Sit cupiditate repellendus sit voluptas. Sit qui rerum nihil nemo qui et magnam. Libero adipisci quasi labore sed eligendi.
-    
-  Fugit in excepturi rerum molestiae. Est laboriosam nemo odit. Magnam harum sed quo unde aut. Error natus consequatur fugiat doloremque est sint aut ipsum.
-  
-  Harum est dolore blanditiis commodi dolorem. Iure autem et dolorem officia non. Recusandae eligendi labore ducimus qui quis molestias sequi.
-    
-  Quidem ut ipsam sed quam reiciendis dignissimos. Qui ipsa eveniet repellendus aspernatur. Commodi quaerat nisi debitis impedit. In quod quisquam molestiae assumenda eligendi dolore eum. Iusto vitae error placeat.'
+(1..20).each do |j|
+  Article.create!(
+    id: j,
+    title: Faker::Quote.most_interesting_man_in_the_world,
+    image: Faker::LoremPixel.image,
+    content: Faker::Lorem.paragraph(sentence_count: 50, supplemental: true),
+  )
+end
+
+User.create(
+  email: 'demo@securerailstheme.com',
+  password: '12345Demo!@#$%',
+  password_confirmation: '12345Demo!@#$%',
+  admin: true
 )

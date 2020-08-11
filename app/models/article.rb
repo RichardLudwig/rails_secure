@@ -1,7 +1,9 @@
 class Article < ApplicationRecord
   belongs_to :user, optional: true
 
-  extend FriendlyId
-  friendly_id :title, :use => [:finders]
-  validates_presence_of :title, :slug, :content, :image
+  validates_presence_of :title, :content, :image
+
+  def to_param	
+    "#{id} #{title}".parameterize	
+  end  
 end
