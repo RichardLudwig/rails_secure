@@ -23,9 +23,9 @@
 
   <div class="form-group">
     <%= form.label :content %>
-    <%= form.text_area :content, class: 'form-control' %>
+    <%= form.rich_text_area :content, class: 'form-control textarea', :rows => 50 %>
   </div>
-
+  <br>
   <div class="actions">
     <div class="form-group">
       <%= form.submit 'Create Article', class: 'btn btn-primary btn-block' %>

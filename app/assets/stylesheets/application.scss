@@ -16,6 +16,8 @@
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
+@import "trix/dist/trix";
+@import "./actiontext.scss";
 
 html {
   position: relative;

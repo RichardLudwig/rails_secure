@@ -15,3 +15,8 @@
   margin-bottom: 1.25rem;
   color: #999;
 }
+
+// fixed UI issue involving trix editor and bootstrap 4, don't remove
+.form-control {
+  height: 100%;
+}
