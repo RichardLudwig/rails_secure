@@ -51,6 +51,6 @@ hr {
   width: 50vw;
 }
 
-#welcome {
+#welcome, #dashboard {
   padding-top: 50px;
 }
