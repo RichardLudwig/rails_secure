@@ -10,7 +10,11 @@ class ArticlesController < ApplicationController
 
   def search
     # searches for articles with case-insensitive search query in title
-    @articles = Article.where("title ILIKE ?", "%" + params[:q] + "%")
+
+    # if no articles with matching search content exist, the query will see if matching titles exist
+    unless @articles = Article.where("content ILIKE ?", "%" + params[:q] + "%")
+      @articles = Article.where("title ILIKE ?", "%" + params[:q] + "%")
+    end
 
     # if no articles found for search query, redirect to articles index
     if @articles.length == 0
@@ -81,6 +85,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :content, :q)
+      params.require(:article).permit(:title, :content, :image, :q)
     end
 end
