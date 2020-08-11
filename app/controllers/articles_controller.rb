@@ -9,7 +9,13 @@ class ArticlesController < ApplicationController
   end
 
   def search
+    # searches for articles with case-insensitive search query in title
     @articles = Article.where("title ILIKE ?", "%" + params[:q] + "%")
+
+    # if no articles found for search query, redirect to articles index
+    if @articles.length == 0
+      redirect_to articles_url
+    end
   end
 
   # GET /articles/1
