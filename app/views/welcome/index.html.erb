@@ -1,15 +1,20 @@
 <div class="container">
-  <section id="welcome" class="text-center">
-    <h2>Welcome to SecureRailsTheme</h2>
-    <hr>
-    <p>This website is a demo for my secure rails theme. I created this theme to provide new web developers with a secure Ruby on Rails theme they can build on for their own projects.</p>
-    
-    <p>Fork the <a href="https://github.com/RichardLudwig/secure_rails_theme" target="_blank">GitHub repo</a> to get started.</p>
-    <hr>
-    <p>If you have any recommendations for future features, contact me at <a href="https://richardludwig.com" target="_blank">https://richardludwig.com</a></p>
+  <% if current_user %> 
+    <h1>Hello <%= current_user.username %></h1>
+  <% else %> 
+    <section id="welcome" class="text-center">
+      <h2>Welcome to SecureRailsTheme</h2>
+      <hr>
+      <p>This website is a demo for my secure rails theme. I created this theme to provide new web developers with a secure Ruby on Rails theme they can build on for their own projects.</p>
+      
+      <p>Fork the <a href="https://github.com/RichardLudwig/secure_rails_theme" target="_blank">GitHub repo</a> to get started.</p>
+      <hr>
+      <p>If you have any recommendations for future features, contact me at <a href="https://richardludwig.com" target="_blank">https://richardludwig.com</a></p>
 
-    <p>I recommend learning the basics of HTML, CSS, JavaScript, Ruby on Rails, and PostgreSQL before using this theme.</p>
-    
-    <p>Documentation is on the GitHub Wiki!</p>
-  </section>
+      <p>I recommend learning the basics of HTML, CSS, JavaScript, Ruby on Rails, and PostgreSQL before using this theme.</p>
+      
+      <p>Documentation is on the GitHub Wiki!</p>
+    </section>
+  <% end %> 
+  
 </div>
