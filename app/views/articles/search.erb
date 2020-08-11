@@ -1,12 +1,8 @@
-<h1>Articles</h1>
+<h1>Search Results</h1>
 <section id="articles" class="container-fluid gallery bg-faded">
-  <% if current_user %>
-    <div class="text-center"><%= link_to 'New Article', new_article_path, class: 'btn btn-success btn-md' %></div>
-    <br>
-  <% end %>
 
   <form role="search" class="bd-search d-flex align-items-center" action="/search">
-    <input type="search" class="form-control" id="search-input" name="q" placeholder="Search..." aria-label="Search for..." autocomplete="on">
+    <input type="search" class="form-control" id="search-input" name="q" placeholder="Search..." aria-label="Search for..." autocomplete="on" required>
   </form>
 
   <div class="album py-5">
@@ -33,5 +29,6 @@
       <% end %>
     </div>
   </div>
+
 
 </section>

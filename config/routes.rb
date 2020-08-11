@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :articles
 
   root 'welcome#index'
+
+  get 'search', to: 'articles#search'
 end
