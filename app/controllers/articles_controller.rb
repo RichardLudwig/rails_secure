@@ -9,12 +9,8 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    # searches for articles with case-insensitive search query in title
-
-    # if no articles with matching search content exist, the query will see if matching titles exist
-    unless @articles = Article.where("content ILIKE ?", "%" + params[:q] + "%")
-      @articles = Article.where("title ILIKE ?", "%" + params[:q] + "%")
-    end
+    # searches for articles with case-insensitive search query in article title, image, or content
+    @articles = Article.where("title ILIKE ? OR image ILIKE ? OR content ILIKE ?", "%" + params[:q] + "%", "%" + params[:q] + "%", "%" + params[:q] + "%")
 
     # if no articles found for search query, redirect to articles index
     if @articles.length == 0

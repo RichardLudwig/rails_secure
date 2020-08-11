@@ -8,6 +8,16 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
 
+  def search
+    # searches for messages with case-insensitive search query in message name, email, or content
+    @messages = Message.where("name ILIKE ? OR email ILIKE ? OR message ILIKE ?", "%" + params[:q] + "%", "%" + params[:q] + "%", "%" + params[:q] + "%")
+
+    # if no messages found for search query, redirect to messages index
+    if @messages.length == 0
+      redirect_to messages_url
+    end
+  end
+
   # GET /messages/1
   # GET /messages/1.json
   def show

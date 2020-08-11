@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get 'search', to: 'articles#search'
+  get 'articles-search', to: 'articles#search'
+  get 'messages-search', to: 'messages#search'
 end
