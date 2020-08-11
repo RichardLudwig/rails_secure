@@ -5,9 +5,7 @@
     <br>
   <% end %>
 
-  <form role="search" class="bd-search d-flex align-items-center" action="/search">
-    <input type="search" class="form-control" id="search-input" name="q" placeholder="Search..." aria-label="Search for..." autocomplete="on" required>
-  </form>
+  <%= render 'layouts/article_search_form' %> 
 
   <div class="album py-5">
     <div class="card-columns">
