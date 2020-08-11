@@ -4,4 +4,8 @@ class Article < ApplicationRecord
   validates :title, :content, :image, presence: true
 
   validates_uniqueness_of :search, presence: true, :case_sensitive => false
+
+  def to_param
+    "#{id} #{title}".parameterize
+  end  
 end
