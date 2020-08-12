@@ -1,8 +1,26 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
+// mitigates xss attacks
 .disabled-text {
   pointer-events: none;
   cursor: default;
+}
+
+// resizes table to fit cell width to content
+@mixin width {
+  width: auto !important;
+}
+
+table {
+  &.table-fit {
+      @include width;
+      table-layout: auto !important;
+      thead th, tfoot th  {
+          @include width;
+      }
+      tbody td, tfoot td {
+          @include width;
+      }
+  }
 }
