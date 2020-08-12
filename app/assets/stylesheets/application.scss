@@ -58,3 +58,21 @@ section {
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
+// resizes table to fit cell width to content
+@mixin width {
+  width: 100% !important;
+}
+
+table {
+  &.table-fit {
+      @include width;
+      table-layout: auto !important;
+      thead th, tfoot th  {
+          @include width;
+      }
+      tbody td, tfoot td {
+          @include width;
+      }
+  }
+}

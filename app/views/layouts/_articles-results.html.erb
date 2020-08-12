@@ -1,0 +1,32 @@
+<div id="articles" class="container-fluid gallery bg-faded">
+
+  <%= render 'layouts/article_search_form' %> 
+  
+  <div class="album py-5">
+    <div class="card-columns">
+      <% @articles.each do |article| %>
+      <div class="card text-center">
+        <div class="card-body">
+          <p class="card-text"><%= link_to article.title, article %></p>
+          <p><%= article.created_at.strftime("%b. %d %Y") %> </p>
+          <% if current_user %>
+            <div class="row">
+              <div class="col text-center">
+                <button type="button" name="button" class="btn btn-md btn-warning btn-block" style="border: none; border-radius: 0;">
+                  <%= link_to 'Edit', edit_article_path(article), style: 'color: white;' %>
+                </button>
+                <button type="button" name="button" class="btn btn-md btn-danger btn-block" style="border: none; border-radius: 0;">
+                  <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, style: 'color: white;' %>
+                </button>
+              </div>
+              </div>
+            <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  
+  
+  </div>
+  
