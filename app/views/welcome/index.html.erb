@@ -1,6 +1,6 @@
 <div class="container">
   <% if current_user %> 
-    <section id="dashboard">
+    <div id="dashboard">
       <div class="spacer"></div>
       <h1>Hello <%= current_user.username %></h1>
       <div class="spacer"></div>
@@ -45,9 +45,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
   <% else %> 
-    <section id="welcome" class="text-center">
+    <div id="welcome" class="text-center">
       <h2>Welcome to SecureRailsTheme</h2>
       <hr>
       <p>This website is a demo for my secure rails theme. I created this theme to provide new web developers with a secure Ruby on Rails theme they can build on for their own projects.</p>
@@ -59,7 +59,7 @@
       <p>I recommend learning the basics of HTML, CSS, JavaScript, Ruby on Rails, and PostgreSQL before using this theme.</p>
       
       <p>Documentation is on the GitHub Wiki!</p>
-    </section>
+    </div>
   <% end %> 
   
 </div>

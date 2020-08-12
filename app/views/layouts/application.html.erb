@@ -7,9 +7,11 @@
   <body>
     <%= render 'layouts/navbar' %> 
     <%= render 'layouts/alerts' %> 
-    <div class="container">
-      <%= yield %> 
-    </div>
+    <section>
+      <div class="container">
+        <%= yield %> 
+      </div>
+    </section>
     <%= render 'layouts/footer' %> 
     <%= render 'layouts/scripts' %> 
   </body>
