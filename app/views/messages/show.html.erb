@@ -25,4 +25,6 @@
   </div>
 </div>
 
+<br>
+<%= link_to 'Destroy', @message, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-block' %>
 <%= link_to 'Back', messages_path, class: 'btn btn-success btn-block' %>
