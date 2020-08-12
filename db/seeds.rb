@@ -21,7 +21,7 @@ end
   Article.create!(
     id: j,
     title: Faker::Quote.most_interesting_man_in_the_world,
-    image: Faker::LoremPixel.image,
+    image: Faker::Placeholdit.image,
     content: Faker::Lorem.paragraph(sentence_count: 50, supplemental: true),
   )
 end
