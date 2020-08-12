@@ -1,8 +1,13 @@
 <div class="blog-article">
   <h2 class="blog-article-title"><%= @article.title %> </h2>
   <p class="blog-article-meta text-center"><%= @article.created_at.strftime("%b. %d %Y") %>
+  <div class="container text-center">
+    <%= social_share_button_tag(@article.title) %>
+  </div>
   <br>
-  <img src="<%= @article.image %>" alt="<%= @article.title %>">
+  <div class="container text-center">
+    <img src="<%= @article.image %>" alt="<%= @article.title %>">
+  </div>
   <p><%= @article.content %> </p>
 </div>
 
