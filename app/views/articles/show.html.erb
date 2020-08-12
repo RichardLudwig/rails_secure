@@ -16,4 +16,6 @@
 <% if current_user && current_user.admin? %> 
 <%= link_to 'Edit', edit_article_path(@article), class: 
 'btn btn-warning btn-block' %> 
+<%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: 
+'btn btn-danger btn-block' %>
 <% end %> 
