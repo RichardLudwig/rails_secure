@@ -5,13 +5,13 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @pagy, @messages = pagy(Message.all, items: 5)
   end
 
   def search
     # searches for messages with case-insensitive search query in message name, email, or content
     @messages = Message.where("name ILIKE ? OR email ILIKE ? OR message ILIKE ?", "%" + params[:q] + "%", "%" + params[:q] + "%", "%" + params[:q] + "%")
-
+    @pagy, @messages = pagy(@messages, items: 5)
     # if no messages found for search query, redirect to messages index
     if @messages.length == 0
       redirect_to messages_url

@@ -34,6 +34,7 @@ gem 'pg', '1.1.4'
 gem 'devise-pwned_password', '~> 0.1.8'
 gem 'brakeman', '~> 4.9'
 gem 'rails-social-share-button', '~> 0.0.2'
+gem 'pagy', '~> 3.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

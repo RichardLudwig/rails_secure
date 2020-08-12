@@ -2,6 +2,8 @@
 
   <%= render 'layouts/article_search_form' %> 
   
+  <%= render 'layouts/pagy_nav' %> 
+  
   <div class="album py-5">
     <div class="card-columns">
       <% @articles.each do |article| %>
@@ -26,6 +28,8 @@
       <% end %>
     </div>
   </div>
+
+  <%= render 'layouts/pagy_nav' %> 
   
   
   </div>

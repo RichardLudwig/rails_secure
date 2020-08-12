@@ -5,12 +5,13 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @pagy, @articles = pagy(Article.all, items: 5)
   end
 
   def search
     # searches for articles with case-insensitive search query in article title, image, or content
     @articles = Article.where("title ILIKE ? OR image ILIKE ? OR content ILIKE ?", "%" + params[:q] + "%", "%" + params[:q] + "%", "%" + params[:q] + "%")
+    @pagy, @articles = pagy(@articles, items: 5)
 
     # if no articles found for search query, redirect to articles index
     if @articles.length == 0
