@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faker'
 
 # This file should contain all the record creation needed to seed the database with its default values.
@@ -22,7 +24,7 @@ end
     id: j,
     title: Faker::Quote.most_interesting_man_in_the_world,
     image: Faker::Placeholdit.image,
-    content: Faker::Lorem.paragraph(sentence_count: 50, supplemental: true),
+    content: Faker::Lorem.paragraph(sentence_count: 50, supplemental: true)
   )
 end
 

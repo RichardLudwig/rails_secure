@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_message, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: [:new]
 
   # GET /messages
@@ -10,18 +12,15 @@ class MessagesController < ApplicationController
 
   def search
     # searches for messages with case-insensitive search query in message name, email, or content
-    @messages = Message.where("name ILIKE ? OR email ILIKE ? OR message ILIKE ?", "%" + params[:q] + "%", "%" + params[:q] + "%", "%" + params[:q] + "%")
+    @messages = Message.where('name ILIKE ? OR email ILIKE ? OR message ILIKE ?', '%' + params[:q] + '%', '%' + params[:q] + '%', '%' + params[:q] + '%')
     @pagy, @messages = pagy(@messages, items: 5)
     # if no messages found for search query, redirect to messages index
-    if @messages.length == 0
-      redirect_to messages_url
-    end
+    redirect_to messages_url if @messages.empty?
   end
 
   # GET /messages/1
   # GET /messages/1.json
-  def show
-  end
+  def show; end
 
   # GET /messages/new
   def new
@@ -29,8 +28,7 @@ class MessagesController < ApplicationController
   end
 
   # GET /messages/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /messages
   # POST /messages.json
@@ -71,13 +69,14 @@ class MessagesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_message
-      @message = Message.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def message_params
-      params.require(:message).permit(:name, :email, :message)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_message
+    @message = Message.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def message_params
+    params.require(:message).permit(:name, :email, :message)
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   validates :email, :password, :password_confirmation, presence: true
 
@@ -6,7 +8,7 @@ class User < ApplicationRecord
     return if password.blank? || password =~ /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/
 
     errors.add :password, 'Complexity requirement not met. Please use: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
-  end  
+  end
 
   # Include default devise modules. Others available are:
   # :confirmable, :timeoutable and :omniauthable
@@ -14,7 +16,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable, :lockable, :pwned_password
 
   def username
-    return self.email.split('@')[0].capitalize
+    email.split('@')[0].capitalize
   end
-  
 end

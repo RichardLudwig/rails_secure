@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Article < ApplicationRecord
   belongs_to :user, optional: true
 
@@ -5,7 +7,7 @@ class Article < ApplicationRecord
 
   has_rich_text :content
 
-  def to_param	
-    "#{id} #{title}".parameterize	
-  end  
+  def to_param
+    "#{id} #{title}".parameterize
+  end
 end

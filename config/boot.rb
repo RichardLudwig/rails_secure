@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
 
 require 'bundler/setup' # Set up gems listed in the Gemfile.
@@ -10,4 +12,4 @@ Bootsnap.setup(
   disable_trace: false, # Sets `RubyVM::InstructionSequence.compile_option = { trace_instruction: false }`
   compile_cache_iseq: true, # Should compile Ruby code into ISeq cache?
   compile_cache_yaml: true # Should compile YAML into a cache?
- )
+)
