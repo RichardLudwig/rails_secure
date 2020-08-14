@@ -21,17 +21,6 @@
   height: 100%;
 }
 
-// UX for social share buttons
-$size: 24px;
-
-.rails-social-share-button {
-  .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
-  }
-}
-
 .card {
   margin-top: 10px;
   margin-bottom: 10px;

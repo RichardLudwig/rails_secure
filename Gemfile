@@ -36,7 +36,6 @@ gem 'devise-pwned_password', '~> 0.1.8'
 gem 'faker', '2.1.2'
 gem 'pagy', '~> 3.5'
 gem 'pg', '1.1.4'
-gem 'rails-social-share-button', '~> 0.0.2'
 gem 'rubocop', '~> 0.89.1', require: false
 
 group :development, :test do
