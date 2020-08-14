@@ -1,4 +1,4 @@
-This website is a demo for my secure rails theme. I created this theme to provide new web developers with a secure Ruby on Rails theme they can build on for their own projects.
+This website is a demo for my secure Ruby on Rails blogger starter theme.
 
 Fork the GitHub repo to get started.
 
